@@ -39,6 +39,18 @@ public class Notice {
      * - 可补充枚举注释：例如 1=已发布，0=未发布，-1=已删除
      */
     private Integer status;
+    /**
+     * 发布平台（对应数据库platform字段）
+     * - 数据库为int类型，实体类用Integer匹配（支持null）
+     * - 可补充枚举注释：例如 1=ios，2=安卓
+     */
+    private Integer platform;
+    /**
+     * 发布范围（对应数据库platform字段）
+     * - 数据库为int类型，实体类用Integer匹配（支持null）
+     * - 可补充枚举注释：例如 1-22 学院名
+     */
+    private Integer catogories;
 
     /**
      * 创建时间（对应数据库createdAt字段）
