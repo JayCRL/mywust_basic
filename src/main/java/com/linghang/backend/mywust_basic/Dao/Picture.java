@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 /**
  * 文件实体类，对应数据库表（假设表名为file）
  */
-@Data
 @TableName("picture") // 若表名与类名不同，请修改为实际表名
 public class Picture {
 
@@ -38,12 +37,13 @@ public class Picture {
      * 创建者ID（非空）
      * 关联上传用户的ID
      */
-    private Integer createdId;
+    @TableField(value = "createdId")
+    private Long createdId;
 
     /**
      * 上传时间
      */
-    @TableField(fill = FieldFill.INSERT) // 插入时自动填充
+    @TableField(value = "uploadTime",fill = FieldFill.INSERT) // 插入时自动填充
     private LocalDateTime uploadTime;
 
     /**
@@ -52,5 +52,61 @@ public class Picture {
      */
     @TableField(updateStrategy = FieldStrategy.NEVER)
     private LocalDateTime statusUpdatedTime;
+
+    public Integer getPid() {
+        return pid;
+    }
+
+    public void setPid(Integer pid) {
+        this.pid = pid;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Integer getIfdelete() {
+        return ifdelete;
+    }
+
+    public void setIfdelete(Integer ifdelete) {
+        this.ifdelete = ifdelete;
+    }
+
+    public Long getCreatedId() {
+        return createdId;
+    }
+
+    public void setCreatedId(Long createdId) {
+        this.createdId = createdId;
+    }
+
+    public LocalDateTime getUploadTime() {
+        return uploadTime;
+    }
+
+    public void setUploadTime(LocalDateTime uploadTime) {
+        this.uploadTime = uploadTime;
+    }
+
+    public LocalDateTime getStatusUpdatedTime() {
+        return statusUpdatedTime;
+    }
+
+    public void setStatusUpdatedTime(LocalDateTime statusUpdatedTime) {
+        this.statusUpdatedTime = statusUpdatedTime;
+    }
 }
 

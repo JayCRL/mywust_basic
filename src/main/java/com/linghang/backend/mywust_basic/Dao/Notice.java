@@ -8,7 +8,6 @@ import java.time.LocalDateTime; // 推荐使用JDK8+的时间类，替代java.ut
 /**
  * 通知实体类（与数据库notice表映射）
  */
-@Data // Lombok注解，自动生成getter、setter、toString、equals等方法
 @TableName("notice") // 指定对应数据库表名（若类名与表名一致可省略，此处显式声明更清晰）
 public class Notice {
 
@@ -75,4 +74,76 @@ public class Notice {
      */
     @TableField(updateStrategy = FieldStrategy.NEVER)
     private LocalDateTime updatedAt;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContext() {
+        return context;
+    }
+
+    public void setContext(String context) {
+        this.context = context;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Integer getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(Integer platform) {
+        this.platform = platform;
+    }
+
+    public Integer getCatogories() {
+        return catogories;
+    }
+
+    public void setCatogories(Integer catogories) {
+        this.catogories = catogories;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Long getCreatedId() {
+        return createdId;
+    }
+
+    public void setCreatedId(Long createdId) {
+        this.createdId = createdId;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }
