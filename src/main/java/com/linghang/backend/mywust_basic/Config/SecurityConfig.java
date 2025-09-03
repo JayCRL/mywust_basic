@@ -23,6 +23,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/UnderGraduateStudent/login").permitAll() // 登录接口放行
+                        .requestMatchers("/GraduatedController/login").permitAll() // 登录接口放行
                         .requestMatchers(
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**",

@@ -1,6 +1,8 @@
 package com.linghang.backend.mywust_basic.Config;
+import cn.wustlinghang.mywust.core.request.service.auth.GraduateLogin;
 import cn.wustlinghang.mywust.core.request.service.auth.UndergraduateLogin;
 import cn.wustlinghang.mywust.core.request.service.captcha.solver.builtin.DdddOcrBase64ImgExprCaptchaSolver;
+import cn.wustlinghang.mywust.core.request.service.captcha.solver.builtin.DdddOcrByteImgExprCaptchaSolver;
 import cn.wustlinghang.mywust.core.util.WustRequester;
 import cn.wustlinghang.mywust.network.RequestClientOption;
 import org.springframework.context.annotation.Bean;
@@ -20,9 +22,19 @@ public class MyWustConfig {
     }
 
     @Bean
+    public DdddOcrByteImgExprCaptchaSolver UcaptchaSolver() {
+        return new DdddOcrByteImgExprCaptchaSolver();
+    }
+
+    @Bean
     public UndergraduateLogin undergraduateLogin(WustRequester wustRequester,
                                                  DdddOcrBase64ImgExprCaptchaSolver captchaSolver) {
         return new UndergraduateLogin(wustRequester, captchaSolver);
+    }
+    @Bean
+    public GraduateLogin graduateLogin(WustRequester wustRequester,
+                                       DdddOcrByteImgExprCaptchaSolver captchaSolver) {
+        return new GraduateLogin(wustRequester, captchaSolver);
     }
 
     @Bean

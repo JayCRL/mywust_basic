@@ -240,7 +240,6 @@ public class PictureController {
             operationLog.setOperateContent(operation + " 更新行数：" + number);
             operationLog.setOperateTime(now());
             operationLog.setOperatorId(userName);
-
             operationService.addOperationLog(operationLog);
 
             if (operationLog.getId() != null) {

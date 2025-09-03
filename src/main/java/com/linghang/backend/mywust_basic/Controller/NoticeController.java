@@ -174,9 +174,10 @@ public class NoticeController {
             notice.setCatogories(noticeDto.getCatogories());
             notice.setContext(noticeDto.getContext());
             notice.setPlatform(noticeDto.getPlatform());
+            notice.setTitle(noticeDto.getTitle());
+            notice.setCreatedAt(now());
             notice.setStatus(0); // 初始状态：未发布
             notice.setCreatedId(Long.valueOf(userName));
-
             noticeService.addNotice(notice);
 
             if (notice.getId() != null) {

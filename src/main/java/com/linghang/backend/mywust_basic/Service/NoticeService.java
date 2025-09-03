@@ -35,9 +35,9 @@ public class NoticeService {
         QueryWrapper<Notice> queryWrapper = new QueryWrapper<>();
         // 设置查询条件：status = 1（已发布状态）
         queryWrapper.eq("status", 1);
-        queryWrapper.eq("platform", 1);
+        queryWrapper.in("platform", 0,1);
         // 可以根据需要添加排序条件，例如按发布时间降序
-        queryWrapper.orderByDesc("publish_time");
+        queryWrapper.orderByDesc("createdAt");
         // 执行查询
         return noticeMapper.selectList(queryWrapper);
     }
@@ -46,9 +46,9 @@ public class NoticeService {
         QueryWrapper<Notice> queryWrapper = new QueryWrapper<>();
         // 设置查询条件：status = 1（已发布状态）
         queryWrapper.eq("status", 1);
-        queryWrapper.eq("platform", 2);
+        queryWrapper.in("platform", 0,2);
         // 可以根据需要添加排序条件，例如按发布时间降序
-        queryWrapper.orderByDesc("publish_time");
+        queryWrapper.orderByDesc("createdAt");
         // 执行查询
         return noticeMapper.selectList(queryWrapper);
     }

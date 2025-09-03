@@ -1,4 +1,7 @@
 package com.linghang.backend.mywust_basic.Dao;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.util.Date;
 
 /**
@@ -9,6 +12,7 @@ public class OperationLog {
     /**
      * 主键ID
      */
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     /**

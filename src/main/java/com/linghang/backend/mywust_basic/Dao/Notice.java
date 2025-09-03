@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.time.LocalDateTime; // 推荐使用JDK8+的时间类，替代java.util.Date
+import java.util.Date;
 
 /**
  * 通知实体类（与数据库notice表映射）
@@ -56,24 +57,25 @@ public class Notice {
      * - @TableField(fill = FieldFill.INSERT)：插入时自动填充（需配合元对象处理器）
      * - 数据库字段为datetime，实体类用LocalDateTime（JDK8+推荐，兼容时区）
      */
-    @TableField(fill = FieldFill.INSERT)
-    private LocalDateTime createdAt;
+    @TableField(value="createdAt",fill = FieldFill.INSERT)
+    private Date createdAt;
 
     /**
      * 创建人ID（对应数据库createdId字段）
      * - 数据库为bigint类型，实体类用Long匹配
      * - 通常存储创建者的用户ID（如管理员ID、学生ID等）
      */
-    private Long createdId;
+    @TableField(value="createdId",fill = FieldFill.INSERT)
 
+    private Long createdId;
     /**
      * 更新时间（对应数据库updatedAt字段）
      * - 数据库已配置：DEFAULT CURRENT_TIMESTAMP + on update CURRENT_TIMESTAMP
      * - @TableField(updateStrategy = FieldStrategy.NEVER)：禁止代码层面手动更新（完全依赖数据库自动更新）
      * - 若希望代码层面也能触发更新，可改为 @TableField(fill = FieldFill.INSERT_UPDATE)（需元对象处理器）
      */
-    @TableField(updateStrategy = FieldStrategy.NEVER)
-    private LocalDateTime updatedAt;
+    @TableField(value="updatedAt",updateStrategy = FieldStrategy.NEVER)
+    private Date updatedAt;
 
     public Integer getId() {
         return id;
@@ -123,11 +125,11 @@ public class Notice {
         this.catogories = catogories;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -139,11 +141,11 @@ public class Notice {
         this.createdId = createdId;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public Date getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 }
