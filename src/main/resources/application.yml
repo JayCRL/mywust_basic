@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/wust_basic?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.linghang.backend.mywust_basic.Dao
+logging:
+  file:
+    name: D:\\log\\mywustBasic.log
+jwt:
+  secret: "2023WustLingHangStudioBackEndJSPVly"
+  expiration: 172800000
+aes:
+  secret: "Xy1z2A3b4C5d6E7f8G9h0JkLmNoPqRsTuVwXadfwax6"
+WustHelper:
+  term: "2025-2026-1"
