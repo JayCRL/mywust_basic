@@ -12,9 +12,9 @@ logging:
   file:
     name: D:\\log\\mywustBasic.log
 jwt:
-  secret: "2023WustLingHangStudioBackEndJSPVly"
-  expiration: 172800000
+  secret: ""
+  expiration:
 aes:
-  secret: "Xy1z2A3b4C5d6E7f8G9h0JkLmNoPqRsTuVwXadfwax6"
+  secret: ""
 WustHelper:
-  term: "2025-2026-1"
+  term: ""
