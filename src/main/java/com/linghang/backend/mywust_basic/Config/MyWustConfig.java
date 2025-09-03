@@ -2,7 +2,7 @@ package com.linghang.backend.mywust_basic.Config;
 import cn.wustlinghang.mywust.core.request.service.auth.GraduateLogin;
 import cn.wustlinghang.mywust.core.request.service.auth.UndergraduateLogin;
 import cn.wustlinghang.mywust.core.request.service.captcha.solver.builtin.DdddOcrBase64ImgExprCaptchaSolver;
-import cn.wustlinghang.mywust.core.request.service.captcha.solver.builtin.DdddOcrByteImgExprCaptchaSolver;
+import com.linghang.backend.mywust_basic.Utils.Parse.DdddOcrByteImgExprCaptchaSolver;
 import cn.wustlinghang.mywust.core.util.WustRequester;
 import cn.wustlinghang.mywust.network.RequestClientOption;
 import org.springframework.context.annotation.Bean;
