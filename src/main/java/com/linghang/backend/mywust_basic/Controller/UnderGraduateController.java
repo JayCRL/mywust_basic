@@ -252,6 +252,7 @@ public class UnderGraduateController {
         }
         return null;
     }
+
     boolean IsValidCookie(){
         String cookie = getCookieFromSecurityContext();
         UndergradStudentInfoApiService studentInfoApiService=new UndergradStudentInfoApiService(wustRequester);

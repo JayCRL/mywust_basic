@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/wust_basic?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
+    username:
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.linghang.backend.mywust_basic.Dao
+logging:
+  file:
+    name: D:\\log\\mywustBasic.log
+jwt:
+  secret: ""
+  expiration:
+aes:
+  secret: ""
+WustHelper:
+  term: "2025-2026-1"
+jspv:
+  oss:
+    access-key-id:
+    endpoint:
+    access-key-secret:
+    bucket-name:
